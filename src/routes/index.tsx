@@ -225,7 +225,7 @@ function Plans() {
       <div className="max-w-6xl mx-auto">
         <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Planos</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">Escolha o pack ideal para você</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">ESCOLHA O PACK IDEAL PARA VOCÊ</h2>
           <p className="mt-4 text-muted-foreground">Compre apenas o que precisa, ou leve tudo com o combo.</p>
         </motion.div>
 
