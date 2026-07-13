@@ -159,7 +159,7 @@ function Benefits() {
       <div className="max-w-6xl mx-auto">
         <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Benefícios</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">Tudo que você precisa em um único lugar</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">TUDO QUE VOCÊ PRECISA EM UM ÚNICO LUGAR</h2>
           <p className="mt-4 text-muted-foreground">Uma biblioteca curada, organizada e pronta para acelerar seu fluxo de trabalho.</p>
         </motion.div>
 
