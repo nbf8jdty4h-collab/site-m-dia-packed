@@ -5,7 +5,7 @@ import {
   Sparkles, Palette, Image as ImageIcon, Brush, Type, ShoppingCart, CreditCard,
   Download, Check, X, Star, ChevronDown, ArrowRight, Zap, MessageCircle, Instagram,
 } from "lucide-react";
-import { CAKTO_LINKS } from "@/lib/products";
+import { CAKTO_LINKS, DISCORD_URL } from "@/lib/products";
 
 export const Route = createFileRoute("/")({
   head: () => ({
