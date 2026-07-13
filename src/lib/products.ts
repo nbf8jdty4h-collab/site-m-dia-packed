@@ -1,8 +1,10 @@
 export const CAKTO_LINKS = {
-  design: "https://SEU-LINK-CAKTO-DESIGN",
-  edicao: "https://SEU-LINK-CAKTO-EDICAO",
-  combo: "https://SEU-LINK-CAKTO-COMBO",
+  design: "https://pay.cakto.com.br/35jmd2p_978100",
+  edicao: "https://pay.cakto.com.br/rtu8r33_978068",
+  combo: "https://pay.cakto.com.br/3bfot5w_978107",
 } as const;
+
+export const DISCORD_URL = "https://discord.gg/ut3TVAzFT";
 
 export type ProductKey = keyof typeof CAKTO_LINKS;
 

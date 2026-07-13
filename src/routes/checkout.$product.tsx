@@ -57,7 +57,7 @@ function Checkout() {
               </div>
             )}
             <div className="mt-3 text-xs uppercase tracking-[0.2em] text-neon font-semibold">Você está comprando</div>
-            <h1 className="mt-2 text-3xl sm:text-4xl font-black">{p.name}</h1>
+            <h1 className="mt-2 text-3xl sm:text-4xl font-black uppercase">{p.name}</h1>
             <p className="mt-2 text-muted-foreground">{p.tagline}</p>
 
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -99,15 +99,14 @@ function Checkout() {
               <span className="text-3xl font-black">{p.price}</span>
             </div>
 
-            <a href={link}
+            <a href={link} target="_blank" rel="noopener noreferrer"
               className={`mt-6 w-full rounded-full px-6 py-4 font-bold text-center inline-flex items-center justify-center gap-2 btn-neon btn-neon-hover ${isCombo ? "glow-strong" : ""}`}>
               <CreditCard className="h-5 w-5" />
               {isCombo ? "COMPRAR COMBO" : "COMPRAR AGORA"}
             </a>
 
-            <div className="mt-3 text-[11px] text-center text-muted-foreground">
-              Link Cakto: <code className="text-neon break-all">{link}</code>
-            </div>
+
+
 
             <div className="mt-6 flex items-center justify-center gap-3 text-xs text-muted-foreground">
               <div className="flex items-center gap-1"><Lock className="h-3.5 w-3.5 text-neon" /> SSL</div>

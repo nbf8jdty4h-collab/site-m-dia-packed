@@ -1,11 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
   Sparkles, Palette, Image as ImageIcon, Brush, Type, ShoppingCart, CreditCard,
-  Download, Check, X, Star, ChevronDown, ArrowRight, Zap, MessageCircle, Instagram,
+  Download, Check, X, Star, ChevronDown, ArrowRight, Zap, MessageCircle,
 } from "lucide-react";
-import { CAKTO_LINKS } from "@/lib/products";
+import { CAKTO_LINKS, DISCORD_URL } from "@/lib/products";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,6 +39,7 @@ function Landing() {
       <Plans />
       <Compare />
       <Testimonials />
+      <DiscordSection />
       <FAQ />
       <FinalCTA />
       <Footer />
@@ -90,10 +91,10 @@ function Hero() {
         </motion.div>
 
         <motion.h1 {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.05 }}
-          className="mt-6 text-4xl sm:text-6xl md:text-7xl font-black leading-[1.05] tracking-tight">
-          A maior biblioteca de{" "}
+          className="mt-6 text-4xl sm:text-6xl md:text-7xl font-black leading-[1.05] tracking-tight uppercase">
+          A MAIOR BIBLIOTECA DE{" "}
           <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-neon)" }}>
-            design do Discord
+            DESIGN DO DISCORD
           </span>
         </motion.h1>
 
@@ -159,7 +160,7 @@ function Benefits() {
       <div className="max-w-6xl mx-auto">
         <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Benefícios</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">Tudo que você precisa em um único lugar</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">TUDO QUE VOCÊ PRECISA EM UM ÚNICO LUGAR</h2>
           <p className="mt-4 text-muted-foreground">Uma biblioteca curada, organizada e pronta para acelerar seu fluxo de trabalho.</p>
         </motion.div>
 
@@ -193,7 +194,7 @@ function HowItWorks() {
       <div className="max-w-3xl mx-auto">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Como funciona</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">Comece em apenas quatro passos</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">COMECE EM APENAS QUATRO PASSOS</h2>
         </motion.div>
 
         <div className="mt-14 relative">
@@ -225,7 +226,7 @@ function Plans() {
       <div className="max-w-6xl mx-auto">
         <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Planos</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">Escolha o pack ideal para você</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">ESCOLHA O PACK IDEAL PARA VOCÊ</h2>
           <p className="mt-4 text-muted-foreground">Compre apenas o que precisa, ou leve tudo com o combo.</p>
         </motion.div>
 
@@ -280,7 +281,7 @@ function PlanCard({
         </div>
       )}
       <div className="text-sm uppercase tracking-[0.15em] text-neon font-semibold">{highlighted ? "Combo" : "Pack"}</div>
-      <h3 className="mt-2 text-2xl font-black">{title}</h3>
+      <h3 className="mt-2 text-2xl font-black uppercase">{title}</h3>
       {description && <p className="mt-2 text-sm text-muted-foreground">{description}</p>}
       <div className="mt-5 flex items-baseline gap-1">
         <span className="text-4xl font-black" style={{ backgroundImage: "var(--gradient-neon)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{price}</span>
@@ -295,10 +296,10 @@ function PlanCard({
           </li>
         ))}
       </ul>
-      <Link to="/checkout/$product" params={{ product: productKey }}
-        className={`mt-7 rounded-full px-6 py-3 font-bold text-center inline-flex items-center justify-center gap-2 ${highlighted ? "btn-neon btn-neon-hover glow-strong" : "btn-neon btn-neon-hover"}`}>
+      <a href={CAKTO_LINKS[productKey]} target="_blank" rel="noopener noreferrer"
+        className={`mt-7 rounded-full px-6 py-3 font-bold text-center inline-flex items-center justify-center gap-2 uppercase ${highlighted ? "btn-neon btn-neon-hover glow-strong" : "btn-neon btn-neon-hover"}`}>
         {cta} <ArrowRight className="h-4 w-4" />
-      </Link>
+      </a>
     </motion.div>
   );
 }
@@ -322,7 +323,7 @@ function Compare() {
       <div className="max-w-4xl mx-auto">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Compare</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">O que tem em cada pack</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">O QUE TEM EM CADA PACK</h2>
         </motion.div>
 
         <motion.div {...fadeUp} className="mt-10 card-graphite grain overflow-hidden">
@@ -375,7 +376,7 @@ function Testimonials() {
       <div className="max-w-6xl mx-auto">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Depoimentos</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">Mais de 100 avaliações positivas</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">MAIS DE 100 AVALIAÇÕES POSITIVAS</h2>
         </motion.div>
 
         <div className="mt-12 -mx-4 px-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
@@ -415,7 +416,7 @@ function FAQ() {
       <div className="max-w-3xl mx-auto">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">FAQ</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">Perguntas frequentes</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">PERGUNTAS FREQUENTES</h2>
         </motion.div>
 
         <div className="mt-10 space-y-3">
@@ -443,22 +444,48 @@ function FAQ() {
   );
 }
 
+function DiscordSection() {
+  return (
+    <section className="py-20 px-4">
+      <div className="max-w-4xl mx-auto card-graphite grain p-8 sm:p-12 text-center relative overflow-hidden glow-strong"
+        style={{ borderColor: "oklch(0.62 0.28 300 / 60%)" }}>
+        <div className="absolute inset-0 opacity-50 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
+        <motion.div {...fadeUp} className="relative">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-graphite/60 backdrop-blur px-4 py-1.5 text-xs text-neon font-semibold uppercase tracking-wider">
+            <MessageCircle className="h-3.5 w-3.5" /> Comunidade
+          </div>
+          <h2 className="mt-5 text-3xl sm:text-5xl font-black uppercase">
+            ENTRE PARA A COMUNIDADE DA{" "}
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-neon)" }}>MÍDIA PACKED</span>
+          </h2>
+          <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
+            Entre no servidor oficial da Mídia Packed para receber novidades, suporte, atualizações dos packs e fazer parte da comunidade.
+          </p>
+          <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer"
+            className="mt-8 btn-neon btn-neon-hover rounded-full px-8 py-4 font-black uppercase inline-flex items-center justify-center gap-2 glow-strong">
+            <MessageCircle className="h-5 w-5" /> ENTRAR NO DISCORD
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function FinalCTA() {
   return (
     <section className="py-20 px-4">
       <div className="max-w-4xl mx-auto card-graphite grain p-8 sm:p-12 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-40 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
         <motion.div {...fadeUp} className="relative">
-          <h2 className="text-3xl sm:text-5xl font-black">Escolha o pack ideal para você</h2>
+          <h2 className="text-3xl sm:text-5xl font-black uppercase">ESCOLHA O PACK IDEAL PARA VOCÊ</h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
             Compre apenas o que precisa ou aproveite o Combo Mídia Packed para ter acesso completo aos dois packs com o melhor custo-benefício.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/checkout/$product" params={{ product: "design" }} className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold">Comprar Pack de Design</Link>
-            <Link to="/checkout/$product" params={{ product: "edicao" }} className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold">Comprar Pack de Edição</Link>
-            <Link to="/checkout/$product" params={{ product: "combo" }} className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold glow-strong">Comprar Combo</Link>
+            <a href={CAKTO_LINKS.design} target="_blank" rel="noopener noreferrer" className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold uppercase">Comprar Pack de Design</a>
+            <a href={CAKTO_LINKS.edicao} target="_blank" rel="noopener noreferrer" className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold uppercase">Comprar Pack de Edição</a>
+            <a href={CAKTO_LINKS.combo} target="_blank" rel="noopener noreferrer" className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold uppercase glow-strong">Comprar Combo</a>
           </div>
-          <div className="mt-4 text-xs text-muted-foreground">Links da Cakto: <code className="text-neon">{CAKTO_LINKS.design}</code></div>
         </motion.div>
       </div>
     </section>
@@ -487,17 +514,20 @@ function Footer() {
         </div>
         <div>
           <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground font-semibold">Contato</div>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li className="flex items-center gap-2"><MessageCircle className="h-4 w-4 text-neon" /> Discord</li>
-            <li className="flex items-center gap-2"><Instagram className="h-4 w-4 text-neon" /> Instagram</li>
-          </ul>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Tire dúvidas, receba suporte e novidades direto no nosso servidor.
+          </p>
+          <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer"
+            className="mt-4 btn-neon btn-neon-hover rounded-full px-4 py-2.5 text-sm font-bold uppercase inline-flex items-center gap-2">
+            <MessageCircle className="h-4 w-4" /> ENTRAR NO DISCORD
+          </a>
         </div>
         <div>
           <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground font-semibold">Comprar</div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><Link to="/checkout/$product" params={{ product: "design" }} className="hover:text-neon transition">Pack de Design</Link></li>
-            <li><Link to="/checkout/$product" params={{ product: "edicao" }} className="hover:text-neon transition">Pack de Edição</Link></li>
-            <li><Link to="/checkout/$product" params={{ product: "combo" }} className="hover:text-neon transition">Combo</Link></li>
+            <li><a href={CAKTO_LINKS.design} target="_blank" rel="noopener noreferrer" className="hover:text-neon transition">Pack de Design</a></li>
+            <li><a href={CAKTO_LINKS.edicao} target="_blank" rel="noopener noreferrer" className="hover:text-neon transition">Pack de Edição</a></li>
+            <li><a href={CAKTO_LINKS.combo} target="_blank" rel="noopener noreferrer" className="hover:text-neon transition">Combo</a></li>
           </ul>
         </div>
       </div>
