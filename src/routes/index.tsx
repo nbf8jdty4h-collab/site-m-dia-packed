@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   Sparkles, Palette, Image as ImageIcon, Brush, Type, ShoppingCart, CreditCard,
   Download, Check, X, Star, ChevronDown, ArrowRight, Zap, MessageCircle,
+  Eye, Layers, Film, Wand2, Clock, Infinity as InfinityIcon, FolderTree,
+  RefreshCw, Users, Smartphone, Video, Store, Lock, ShieldCheck, Rocket,
 } from "lucide-react";
 import { CAKTO_LINKS, DISCORD_URL } from "@/lib/products";
 
