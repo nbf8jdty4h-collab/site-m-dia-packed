@@ -39,6 +39,7 @@ function Landing() {
       <Plans />
       <Compare />
       <Testimonials />
+      <DiscordSection />
       <FAQ />
       <FinalCTA />
       <Footer />
