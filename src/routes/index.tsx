@@ -514,17 +514,20 @@ function Footer() {
         </div>
         <div>
           <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground font-semibold">Contato</div>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li className="flex items-center gap-2"><MessageCircle className="h-4 w-4 text-neon" /> Discord</li>
-            <li className="flex items-center gap-2"><Instagram className="h-4 w-4 text-neon" /> Instagram</li>
-          </ul>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Tire dúvidas, receba suporte e novidades direto no nosso servidor.
+          </p>
+          <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer"
+            className="mt-4 btn-neon btn-neon-hover rounded-full px-4 py-2.5 text-sm font-bold uppercase inline-flex items-center gap-2">
+            <MessageCircle className="h-4 w-4" /> ENTRAR NO DISCORD
+          </a>
         </div>
         <div>
           <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground font-semibold">Comprar</div>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><Link to="/checkout/$product" params={{ product: "design" }} className="hover:text-neon transition">Pack de Design</Link></li>
-            <li><Link to="/checkout/$product" params={{ product: "edicao" }} className="hover:text-neon transition">Pack de Edição</Link></li>
-            <li><Link to="/checkout/$product" params={{ product: "combo" }} className="hover:text-neon transition">Combo</Link></li>
+            <li><a href={CAKTO_LINKS.design} target="_blank" rel="noopener noreferrer" className="hover:text-neon transition">Pack de Design</a></li>
+            <li><a href={CAKTO_LINKS.edicao} target="_blank" rel="noopener noreferrer" className="hover:text-neon transition">Pack de Edição</a></li>
+            <li><a href={CAKTO_LINKS.combo} target="_blank" rel="noopener noreferrer" className="hover:text-neon transition">Combo</a></li>
           </ul>
         </div>
       </div>
