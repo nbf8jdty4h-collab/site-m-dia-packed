@@ -57,7 +57,7 @@ function Checkout() {
               </div>
             )}
             <div className="mt-3 text-xs uppercase tracking-[0.2em] text-neon font-semibold">Você está comprando</div>
-            <h1 className="mt-2 text-3xl sm:text-4xl font-black">{p.name}</h1>
+            <h1 className="mt-2 text-3xl sm:text-4xl font-black uppercase">{p.name}</h1>
             <p className="mt-2 text-muted-foreground">{p.tagline}</p>
 
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
