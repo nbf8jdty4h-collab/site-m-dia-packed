@@ -420,8 +420,6 @@ function Testimonials() {
     </section>
   );
 }
-  );
-}
 
 const FAQS = [
   { q: "O acesso é vitalício?", a: "Sim. Uma única compra dá acesso vitalício ao conteúdo escolhido, sem mensalidades." },
