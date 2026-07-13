@@ -549,3 +549,308 @@ function Footer() {
     </footer>
   );
 }
+
+/* ===================== NEW SECTIONS ===================== */
+
+function BackgroundFX() {
+  return (
+    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      {/* diagonal lines */}
+      <div className="absolute inset-0 opacity-[0.06]"
+        style={{ backgroundImage: "repeating-linear-gradient(115deg, rgba(255,255,255,0.6) 0 1px, transparent 1px 90px)" }} />
+      {/* graphite noise */}
+      <div className="absolute inset-0 opacity-40"
+        style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)", backgroundSize: "3px 3px" }} />
+      {/* purple blurred blobs */}
+      <div className="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full blur-3xl opacity-30"
+        style={{ background: "radial-gradient(circle, oklch(0.62 0.28 300 / 45%), transparent 70%)" }} />
+      <div className="absolute top-1/3 -right-40 h-[600px] w-[600px] rounded-full blur-3xl opacity-25"
+        style={{ background: "radial-gradient(circle, oklch(0.68 0.22 305 / 40%), transparent 70%)" }} />
+      <div className="absolute bottom-0 left-1/4 h-[500px] w-[500px] rounded-full blur-3xl opacity-20"
+        style={{ background: "radial-gradient(circle, oklch(0.62 0.28 300 / 40%), transparent 70%)" }} />
+      {/* particles */}
+      {Array.from({ length: 24 }).map((_, i) => (
+        <motion.span key={i}
+          className="absolute h-1 w-1 rounded-full bg-neon"
+          style={{ left: `${(i * 37) % 100}%`, top: `${(i * 53) % 100}%`, boxShadow: "0 0 8px oklch(0.62 0.28 300)" }}
+          animate={{ opacity: [0.15, 0.6, 0.15], y: [0, -12, 0] }}
+          transition={{ duration: 4 + (i % 5), repeat: Infinity, delay: i * 0.2 }}
+        />
+      ))}
+    </div>
+  );
+}
+
+const GALLERY_ITEMS = [
+  { icon: Palette, label: "Logos", gradient: "from-fuchsia-500 to-purple-700" },
+  { icon: ImageIcon, label: "Thumbnails", gradient: "from-purple-600 to-indigo-700" },
+  { icon: Brush, label: "Brushes", gradient: "from-violet-500 to-purple-800" },
+  { icon: Type, label: "Fontes", gradient: "from-pink-500 to-purple-700" },
+  { icon: Layers, label: "PSDs", gradient: "from-purple-500 to-fuchsia-700" },
+  { icon: Wand2, label: "Mockups", gradient: "from-indigo-500 to-purple-700" },
+  { icon: Film, label: "Presets", gradient: "from-purple-700 to-pink-600" },
+  { icon: Sparkles, label: "Overlays", gradient: "from-violet-600 to-purple-900" },
+];
+
+function Gallery() {
+  return (
+    <section className="py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
+          <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Prévia</div>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">VEJA UMA PRÉVIA DO QUE VOCÊ VAI RECEBER</h2>
+          <p className="mt-4 text-muted-foreground">Conheça alguns dos milhares de arquivos disponíveis na Mídia Packed.</p>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {GALLERY_ITEMS.map((g, i) => (
+            <motion.div key={g.label} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.05 }}
+              className="card-graphite grain group relative overflow-hidden">
+              <div className={`aspect-[4/3] relative bg-gradient-to-br ${g.gradient} overflow-hidden`}>
+                <div className="absolute inset-0 opacity-30"
+                  style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)", backgroundSize: "8px 8px" }} />
+                <div className="absolute inset-0 grid place-items-center">
+                  <g.icon className="h-16 w-16 text-white/90 drop-shadow-[0_0_20px_rgba(255,255,255,0.6)] group-hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 grid place-items-center">
+                  <button className="btn-neon rounded-full px-5 py-2 text-xs font-bold uppercase inline-flex items-center gap-2 glow-neon">
+                    <Eye className="h-4 w-4" /> Visualizar
+                  </button>
+                </div>
+              </div>
+              <div className="p-4 flex items-center justify-between">
+                <span className="font-bold uppercase text-sm tracking-wide">{g.label}</span>
+                <ArrowRight className="h-4 w-4 text-neon opacity-0 group-hover:opacity-100 transition" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const WHAT_YOU_GET = [
+  { icon: Zap, title: "Acesso imediato", desc: "Receba acesso logo após a confirmação do pagamento." },
+  { icon: InfinityIcon, title: "Acesso vitalício", desc: "Compre apenas uma vez." },
+  { icon: Download, title: "Download ilimitado", desc: "Baixe quando quiser." },
+  { icon: FolderTree, title: "Biblioteca organizada", desc: "Tudo separado por categorias." },
+  { icon: RefreshCw, title: "Atualizações frequentes", desc: "Novos materiais adicionados regularmente." },
+  { icon: MessageCircle, title: "Comunidade exclusiva", desc: "Acesso ao servidor oficial da Mídia Packed." },
+];
+
+function WhatYouGet() {
+  return (
+    <section className="py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
+          <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Vantagens</div>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">TUDO LIBERADO IMEDIATAMENTE APÓS A COMPRA</h2>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {WHAT_YOU_GET.map((b, i) => (
+            <motion.div key={b.title} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.05 }}
+              className="card-graphite grain p-6 group">
+              <div className="h-12 w-12 rounded-xl btn-neon grid place-items-center glow-neon group-hover:scale-110 transition-transform">
+                <b.icon className="h-6 w-6" />
+              </div>
+              <h3 className="mt-5 text-lg font-bold uppercase">{b.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{b.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const COMPAT_ITEMS = [
+  "Adobe Photoshop", "Photopea", "Adobe Illustrator", "Canva",
+  "Adobe Premiere Pro", "After Effects", "CapCut",
+];
+
+function Compatibility() {
+  return (
+    <section className="py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
+          <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Compatibilidade</div>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">COMPATÍVEL COM OS PRINCIPAIS PROGRAMAS</h2>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+          {COMPAT_ITEMS.map((name, i) => (
+            <motion.div key={name} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.04 }}
+              className="card-graphite grain p-5 text-center group hover:glow-neon">
+              <div className="mx-auto h-14 w-14 rounded-2xl grid place-items-center text-lg font-black uppercase"
+                style={{ background: "var(--gradient-neon)", boxShadow: "var(--shadow-glow)" }}>
+                {name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+              </div>
+              <div className="mt-3 text-xs font-semibold uppercase tracking-wide">{name}</div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p {...fadeUp} className="mt-8 text-center text-sm text-muted-foreground max-w-2xl mx-auto">
+          Os arquivos foram organizados para facilitar sua utilização nos principais softwares utilizados por designers e editores.
+        </motion.p>
+      </div>
+    </section>
+  );
+}
+
+const WHO_IS_FOR = [
+  { icon: Palette, title: "Designers" },
+  { icon: Smartphone, title: "Social Media" },
+  { icon: Video, title: "Editores" },
+  { icon: Sparkles, title: "Criadores de Conteúdo" },
+  { icon: Users, title: "Freelancers" },
+  { icon: Store, title: "Donos de lojas e comunidades no Discord" },
+];
+
+function WhoIsFor() {
+  return (
+    <section className="py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
+          <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Público</div>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">PARA QUEM É A MÍDIA PACKED?</h2>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {WHO_IS_FOR.map((p, i) => (
+            <motion.div key={p.title} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.05 }}
+              className="card-graphite grain p-6 flex items-center gap-4 group">
+              <div className="h-14 w-14 rounded-2xl btn-neon grid place-items-center glow-neon shrink-0 group-hover:scale-110 transition-transform">
+                <p.icon className="h-6 w-6" />
+              </div>
+              <div className="font-bold uppercase text-sm sm:text-base tracking-wide">{p.title}</div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ComboBonus() {
+  const items = [
+    "Pack de Design completo",
+    "Pack de Edição completo",
+    "Acesso vitalício",
+    "Atualizações frequentes",
+    "Comunidade no Discord",
+  ];
+  return (
+    <section className="py-20 px-4">
+      <div className="max-w-4xl mx-auto">
+        <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
+          <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Bônus do Combo</div>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">O COMBO ENTREGA O MELHOR CUSTO-BENEFÍCIO</h2>
+        </motion.div>
+
+        <motion.div {...fadeUp} className="mt-12 card-graphite grain p-8 sm:p-10 relative overflow-hidden glow-strong"
+          style={{ borderColor: "oklch(0.62 0.28 300 / 80%)" }}>
+          <div className="absolute inset-0 opacity-40 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+            <div className="btn-neon rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider">
+              🔥 Melhor Oferta
+            </div>
+          </div>
+          <div className="relative grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="text-sm uppercase tracking-[0.15em] text-neon font-semibold">Combo Mídia Packed</div>
+              <div className="mt-4 flex items-baseline gap-2">
+                <span className="text-5xl sm:text-6xl font-black" style={{ backgroundImage: "var(--gradient-neon)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>R$ 54,90</span>
+                <span className="text-sm text-muted-foreground">/ vitalício</span>
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground">Pack de Design + Pack de Edição em uma única compra.</p>
+              <a href={CAKTO_LINKS.combo} target="_blank" rel="noopener noreferrer"
+                className="mt-6 btn-neon btn-neon-hover rounded-full px-8 py-4 font-black uppercase inline-flex items-center gap-2 glow-strong">
+                Comprar Combo <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+            <ul className="space-y-3">
+              {items.map((it) => (
+                <li key={it} className="flex items-start gap-3 text-sm sm:text-base">
+                  <div className="h-6 w-6 rounded-full btn-neon grid place-items-center shrink-0 mt-0.5">
+                    <Check className="h-3.5 w-3.5" />
+                  </div>
+                  <span>{it}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+const SECURE = [
+  { icon: Lock, title: "Pagamento Seguro" },
+  { icon: Rocket, title: "Liberação Rápida" },
+  { icon: ShieldCheck, title: "Compra Protegida" },
+  { icon: CreditCard, title: "Pagamento pela Cakto" },
+];
+
+function SecureBuy() {
+  return (
+    <section className="py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto">
+          <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Segurança</div>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">COMPRE COM TRANQUILIDADE</h2>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {SECURE.map((s, i) => (
+            <motion.div key={s.title} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.05 }}
+              className="card-graphite grain p-6 text-center group">
+              <div className="mx-auto h-14 w-14 rounded-2xl btn-neon grid place-items-center glow-neon group-hover:scale-110 transition-transform">
+                <s.icon className="h-6 w-6" />
+              </div>
+              <div className="mt-4 font-bold uppercase text-sm tracking-wide">{s.title}</div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function MobileStickyBar() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="md:hidden fixed bottom-3 left-3 right-3 z-50 rounded-2xl bg-black/95 backdrop-blur-xl p-3 flex items-center gap-3"
+          style={{ border: "1px solid oklch(0.62 0.28 300 / 70%)", boxShadow: "0 10px 40px -10px oklch(0.62 0.28 300 / 80%)" }}
+        >
+          <div className="flex-1 min-w-0">
+            <div className="text-[10px] uppercase tracking-widest text-neon font-bold">Combo Mídia Packed</div>
+            <div className="font-black text-lg" style={{ backgroundImage: "var(--gradient-neon)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              R$ 54,90
+            </div>
+          </div>
+          <a href={CAKTO_LINKS.combo} target="_blank" rel="noopener noreferrer"
+            className="btn-neon btn-neon-hover rounded-full px-4 py-3 text-xs font-black uppercase inline-flex items-center gap-1.5 glow-neon shrink-0">
+            Comprar <ArrowRight className="h-3.5 w-3.5" />
+          </a>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
