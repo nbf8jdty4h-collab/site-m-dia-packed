@@ -444,22 +444,48 @@ function FAQ() {
   );
 }
 
+function DiscordSection() {
+  return (
+    <section className="py-20 px-4">
+      <div className="max-w-4xl mx-auto card-graphite grain p-8 sm:p-12 text-center relative overflow-hidden glow-strong"
+        style={{ borderColor: "oklch(0.62 0.28 300 / 60%)" }}>
+        <div className="absolute inset-0 opacity-50 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
+        <motion.div {...fadeUp} className="relative">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-graphite/60 backdrop-blur px-4 py-1.5 text-xs text-neon font-semibold uppercase tracking-wider">
+            <MessageCircle className="h-3.5 w-3.5" /> Comunidade
+          </div>
+          <h2 className="mt-5 text-3xl sm:text-5xl font-black uppercase">
+            ENTRE PARA A COMUNIDADE DA{" "}
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-neon)" }}>MÍDIA PACKED</span>
+          </h2>
+          <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
+            Entre no servidor oficial da Mídia Packed para receber novidades, suporte, atualizações dos packs e fazer parte da comunidade.
+          </p>
+          <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer"
+            className="mt-8 btn-neon btn-neon-hover rounded-full px-8 py-4 font-black uppercase inline-flex items-center justify-center gap-2 glow-strong">
+            <MessageCircle className="h-5 w-5" /> ENTRAR NO DISCORD
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function FinalCTA() {
   return (
     <section className="py-20 px-4">
       <div className="max-w-4xl mx-auto card-graphite grain p-8 sm:p-12 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-40 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
         <motion.div {...fadeUp} className="relative">
-          <h2 className="text-3xl sm:text-5xl font-black">Escolha o pack ideal para você</h2>
+          <h2 className="text-3xl sm:text-5xl font-black uppercase">ESCOLHA O PACK IDEAL PARA VOCÊ</h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
             Compre apenas o que precisa ou aproveite o Combo Mídia Packed para ter acesso completo aos dois packs com o melhor custo-benefício.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/checkout/$product" params={{ product: "design" }} className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold">Comprar Pack de Design</Link>
-            <Link to="/checkout/$product" params={{ product: "edicao" }} className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold">Comprar Pack de Edição</Link>
-            <Link to="/checkout/$product" params={{ product: "combo" }} className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold glow-strong">Comprar Combo</Link>
+            <a href={CAKTO_LINKS.design} target="_blank" rel="noopener noreferrer" className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold uppercase">Comprar Pack de Design</a>
+            <a href={CAKTO_LINKS.edicao} target="_blank" rel="noopener noreferrer" className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold uppercase">Comprar Pack de Edição</a>
+            <a href={CAKTO_LINKS.combo} target="_blank" rel="noopener noreferrer" className="btn-neon btn-neon-hover rounded-full px-6 py-3 font-bold uppercase glow-strong">Comprar Combo</a>
           </div>
-          <div className="mt-4 text-xs text-muted-foreground">Links da Cakto: <code className="text-neon">{CAKTO_LINKS.design}</code></div>
         </motion.div>
       </div>
     </section>
