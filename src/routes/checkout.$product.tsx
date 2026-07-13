@@ -105,9 +105,8 @@ function Checkout() {
               {isCombo ? "COMPRAR COMBO" : "COMPRAR AGORA"}
             </a>
 
-            <div className="mt-3 text-[11px] text-center text-muted-foreground">
-              Link Cakto: <code className="text-neon break-all">{link}</code>
-            </div>
+
+
 
             <div className="mt-6 flex items-center justify-center gap-3 text-xs text-muted-foreground">
               <div className="flex items-center gap-1"><Lock className="h-3.5 w-3.5 text-neon" /> SSL</div>
