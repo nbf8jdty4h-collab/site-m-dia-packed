@@ -8,6 +8,9 @@ import {
   RefreshCw, Users, Smartphone, Video, Store, Lock, ShieldCheck, Rocket,
 } from "lucide-react";
 import { CAKTO_LINKS, DISCORD_URL } from "@/lib/products";
+import discord1 from "@/assets/discord-1.jpeg.asset.json";
+import discord2 from "@/assets/discord-2.jpeg.asset.json";
+import discord3 from "@/assets/discord-3.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
