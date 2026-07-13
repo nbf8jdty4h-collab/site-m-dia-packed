@@ -280,7 +280,7 @@ function PlanCard({
         </div>
       )}
       <div className="text-sm uppercase tracking-[0.15em] text-neon font-semibold">{highlighted ? "Combo" : "Pack"}</div>
-      <h3 className="mt-2 text-2xl font-black">{title}</h3>
+      <h3 className="mt-2 text-2xl font-black uppercase">{title}</h3>
       {description && <p className="mt-2 text-sm text-muted-foreground">{description}</p>}
       <div className="mt-5 flex items-baseline gap-1">
         <span className="text-4xl font-black" style={{ backgroundImage: "var(--gradient-neon)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{price}</span>
@@ -295,10 +295,10 @@ function PlanCard({
           </li>
         ))}
       </ul>
-      <Link to="/checkout/$product" params={{ product: productKey }}
-        className={`mt-7 rounded-full px-6 py-3 font-bold text-center inline-flex items-center justify-center gap-2 ${highlighted ? "btn-neon btn-neon-hover glow-strong" : "btn-neon btn-neon-hover"}`}>
+      <a href={CAKTO_LINKS[productKey]} target="_blank" rel="noopener noreferrer"
+        className={`mt-7 rounded-full px-6 py-3 font-bold text-center inline-flex items-center justify-center gap-2 uppercase ${highlighted ? "btn-neon btn-neon-hover glow-strong" : "btn-neon btn-neon-hover"}`}>
         {cta} <ArrowRight className="h-4 w-4" />
-      </Link>
+      </a>
     </motion.div>
   );
 }
