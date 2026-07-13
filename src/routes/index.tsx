@@ -193,7 +193,7 @@ function HowItWorks() {
       <div className="max-w-3xl mx-auto">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Como funciona</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">Comece em apenas quatro passos</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">COMECE EM APENAS QUATRO PASSOS</h2>
         </motion.div>
 
         <div className="mt-14 relative">
