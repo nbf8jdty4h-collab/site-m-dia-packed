@@ -415,7 +415,7 @@ function FAQ() {
       <div className="max-w-3xl mx-auto">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">FAQ</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">Perguntas frequentes</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">PERGUNTAS FREQUENTES</h2>
         </motion.div>
 
         <div className="mt-10 space-y-3">
