@@ -380,10 +380,6 @@ const REVIEWS = [
   { name: "João Victor", role: "Designer", text: "Biblioteca completa, organizada e muito fácil de usar." },
 ];
 
-import discord1 from "@/assets/discord-1.jpeg.asset.json";
-import discord2 from "@/assets/discord-2.jpeg.asset.json";
-import discord3 from "@/assets/discord-3.jpeg.asset.json";
-
 const DISCORD_SHOTS = [
   { src: discord1.url, alt: "Avaliações reais dos membros da Mídia Packed no Discord" },
   { src: discord2.url, alt: "Feedback positivo da comunidade no Discord" },
