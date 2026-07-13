@@ -322,7 +322,7 @@ function Compare() {
       <div className="max-w-4xl mx-auto">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Compare</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">O que tem em cada pack</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">O QUE TEM EM CADA PACK</h2>
         </motion.div>
 
         <motion.div {...fadeUp} className="mt-10 card-graphite grain overflow-hidden">
