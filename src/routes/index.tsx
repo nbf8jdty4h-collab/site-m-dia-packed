@@ -90,10 +90,10 @@ function Hero() {
         </motion.div>
 
         <motion.h1 {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.05 }}
-          className="mt-6 text-4xl sm:text-6xl md:text-7xl font-black leading-[1.05] tracking-tight">
-          A maior biblioteca de{" "}
+          className="mt-6 text-4xl sm:text-6xl md:text-7xl font-black leading-[1.05] tracking-tight uppercase">
+          A MAIOR BIBLIOTECA DE{" "}
           <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-neon)" }}>
-            design do Discord
+            DESIGN DO DISCORD
           </span>
         </motion.h1>
 
