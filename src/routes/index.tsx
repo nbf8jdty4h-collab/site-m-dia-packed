@@ -1,9 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
   Sparkles, Palette, Image as ImageIcon, Brush, Type, ShoppingCart, CreditCard,
-  Download, Check, X, Star, ChevronDown, ArrowRight, Zap, MessageCircle, Instagram,
+  Download, Check, X, Star, ChevronDown, ArrowRight, Zap, MessageCircle,
 } from "lucide-react";
 import { CAKTO_LINKS, DISCORD_URL } from "@/lib/products";
 
