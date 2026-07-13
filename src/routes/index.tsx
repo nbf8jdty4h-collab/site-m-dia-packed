@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       { title: "Mídia Packed — A maior biblioteca de design do Discord" },
       { name: "description", content: "Mais de 60GB de recursos profissionais: logos, thumbnails, brushes, fontes, LUTs, presets e mais. Acesso vitalício." },
       { property: "og:title", content: "Mídia Packed — A maior biblioteca de design do Discord" },
-      { property: "og:description", content: "Mais de 60GB de recursos premium para designers e editores. Acesso vitalício." },
+      { property: "og:description", content: "Mais de 60GB de recursos profissionais: logos, thumbnails, brushes, fontes, LUTs, presets e mais. Acesso vitalício." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
