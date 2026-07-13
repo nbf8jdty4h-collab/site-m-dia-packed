@@ -32,19 +32,27 @@ const fadeUp = {
 
 function Landing() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden">
+    <div className="min-h-screen text-white overflow-x-hidden relative">
+      <BackgroundFX />
       <Nav />
       <Hero />
       <Stats />
       <Benefits />
+      <Gallery />
+      <WhatYouGet />
       <HowItWorks />
+      <Compatibility />
+      <WhoIsFor />
       <Plans />
       <Compare />
+      <ComboBonus />
+      <SecureBuy />
       <Testimonials />
       <DiscordSection />
       <FAQ />
       <FinalCTA />
       <Footer />
+      <MobileStickyBar />
     </div>
   );
 }
