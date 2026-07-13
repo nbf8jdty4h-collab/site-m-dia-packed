@@ -375,7 +375,7 @@ function Testimonials() {
       <div className="max-w-6xl mx-auto">
         <motion.div {...fadeUp} className="text-center">
           <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Depoimentos</div>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-black">Mais de 100 avaliações positivas</h2>
+          <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">MAIS DE 100 AVALIAÇÕES POSITIVAS</h2>
         </motion.div>
 
         <div className="mt-12 -mx-4 px-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
