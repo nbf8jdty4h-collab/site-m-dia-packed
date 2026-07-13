@@ -8,6 +8,9 @@ import {
   RefreshCw, Users, Smartphone, Video, Store, Lock, ShieldCheck, Rocket,
 } from "lucide-react";
 import { CAKTO_LINKS, DISCORD_URL } from "@/lib/products";
+import discord1 from "@/assets/discord-1.jpeg.asset.json";
+import discord2 from "@/assets/discord-2.jpeg.asset.json";
+import discord3 from "@/assets/discord-3.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -380,31 +383,41 @@ const REVIEWS = [
   { name: "João Victor", role: "Designer", text: "Biblioteca completa, organizada e muito fácil de usar." },
 ];
 
+const DISCORD_SHOTS = [
+  { src: discord1.url, alt: "Avaliações reais dos membros da Mídia Packed no Discord" },
+  { src: discord2.url, alt: "Feedback positivo da comunidade no Discord" },
+  { src: discord3.url, alt: "Depoimentos dos clientes da Mídia Packed" },
+];
+
 function Testimonials() {
   return (
     <section id="avaliacoes" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div {...fadeUp} className="text-center">
-          <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Depoimentos</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-neon font-semibold">Depoimentos Reais</div>
           <h2 className="mt-3 text-3xl sm:text-5xl font-black uppercase">MAIS DE 100 AVALIAÇÕES POSITIVAS</h2>
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Prints reais da comunidade oficial da Mídia Packed no Discord.</p>
         </motion.div>
 
-        <div className="mt-12 -mx-4 px-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-          <div className="flex gap-4 pb-4">
-            {REVIEWS.map((r) => (
-              <motion.div key={r.name} {...fadeUp}
-                className="card-graphite grain p-6 min-w-[280px] sm:min-w-[340px] snap-start">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
+          {DISCORD_SHOTS.map((s, i) => (
+            <motion.a key={i} href={DISCORD_URL} target="_blank" rel="noopener noreferrer"
+              {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.08 }}
+              className="card-graphite grain overflow-hidden group hover:glow-neon block">
+              <div className="relative bg-black">
+                <img src={s.src} alt={s.alt} loading="lazy"
+                  className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500" />
+                <div className="pointer-events-none absolute inset-0"
+                  style={{ background: "linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.6))" }} />
+              </div>
+              <div className="p-4 flex items-center justify-between">
                 <div className="flex gap-1 text-neon">
-                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
+                  {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="h-4 w-4 fill-current" />)}
                 </div>
-                <p className="mt-4 text-sm leading-relaxed">"{r.text}"</p>
-                <div className="mt-5 pt-4 border-t border-border">
-                  <div className="font-bold">{r.name}</div>
-                  <div className="text-xs text-muted-foreground">{r.role}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                <span className="text-xs text-muted-foreground uppercase tracking-wide">Discord</span>
+              </div>
+            </motion.a>
+          ))}
         </div>
       </div>
     </section>
