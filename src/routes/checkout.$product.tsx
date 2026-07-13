@@ -99,7 +99,7 @@ function Checkout() {
               <span className="text-3xl font-black">{p.price}</span>
             </div>
 
-            <a href={link}
+            <a href={link} target="_blank" rel="noopener noreferrer"
               className={`mt-6 w-full rounded-full px-6 py-4 font-bold text-center inline-flex items-center justify-center gap-2 btn-neon btn-neon-hover ${isCombo ? "glow-strong" : ""}`}>
               <CreditCard className="h-5 w-5" />
               {isCombo ? "COMPRAR COMBO" : "COMPRAR AGORA"}
